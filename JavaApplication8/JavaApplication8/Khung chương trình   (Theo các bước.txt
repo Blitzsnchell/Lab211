@@ -1,0 +1,78 @@
+Khung chương trình   (Theo các bước mình làm ra)
+
+Vẽ cần object, method nào: code method
+
+Test input: các input khác nhau -> output phải đúng
+
+VD: Ví dụ chương trình chạy phải thực tiễn
+
+bài cơ bản nhất: 50 loc (có 2 cách chạy đệ quy, tối ưu(truyền array)): 
+	1 lần chạy đệ quy là tính 1 số
+	lưu vào array: lưu các số mình tính ra dc vào array số cuối f(n) = f(n-1) + f(n-2)
+	Arr[45]: 0 1 1 2 3 5 .....
+	in arr 
+
+Bài toán: tính 45 số đầu của dãy fibonacci
+	
+	term  -  lower    -   higher
+	45, 1, 0 -> 44, 1, 1 | 44, 1, 1 -> 43, 1, 2 | 43, 1, 2 -> 42, 2, 3
+	-> 0 + 1, .....
+	term = 2 low 1
+45 -> 2
+	45 0
+	44 1
+	43 1
+	42 2
+	...
+	2  số cuối cùng 771
+
+Nhanh bằng với cách dùng arr 
+	2
+	fibo(1) + fibo(0)
+	1		0
+-----------------------------
+	3
+	fibo(2) + fibo(1)
+	2
+	fibo(1) + fibo(0)
+--------
+	4
+
+--------------------------------
+	Binary search: 4
+ 0 3 1 2 4 5 6 7 2 1 -> n 
+
+-: chia đôi dãy số để tìm kiếm, có điều kiện (dãy số được sort)
+
+	1
+	0 1 1 2 2 3 4 5 6 
+	
+	chia đôi dãy số
+	
+	n = n / 2 = 4
+	0 - 4
+	arr[4] = 2
+	0 0 1 2 2 
+	
+n = n / 2 = 2
+	arr[2] = 1
+n = n / 2 = 3 / 2 = 1
+	arr[1] = 0
+	0 == 0 return true
+------------------------
+	0 3 5 7 9 11 13
+7:  9 11 13
+11: 13 ? 13 : true : false
+------------------------
+Test: thuật toán thì phải test nghĩ test case sao cho đúng
+1 2 3 4 5 6 7 8 9 : 2 -> found!
+1 1 1 1 1 1 1 1 1 : 1 -> found!
+1 1 1 1 1 1 1 1 1 : 0 -> notfound!
+
+
+
+
+
+
+
+	
