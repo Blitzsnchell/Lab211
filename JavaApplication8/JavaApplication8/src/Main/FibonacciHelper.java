@@ -10,60 +10,30 @@ package Main;
  */
 public class FibonacciHelper {
 
-    public int fiboHepper(int index) {
-        if (index == 0) {
-            return 0;
+  public int findFibonacci(int[] storeFibonacci, int terms) {
+        //base cases of Fibonacci
+        if(terms <= 1) {
+            storeFibonacci[terms] = terms;
+            return storeFibonacci[terms];
         }
-        if (index < 2) {
-            return 1;
+        //if terms value is not 0 than return value at certain term
+        if(storeFibonacci[terms] != 0) {
+            return storeFibonacci[terms];
         }
-        return fiboHepper(index - 1) + fiboHepper(index - 2);
+        //value of next Fibonacci number is sum of 2 preceding Fibonacci number
+        storeFibonacci[terms] = findFibonacci(storeFibonacci, terms - 1)
+                + findFibonacci(storeFibonacci, terms - 2);
+        return storeFibonacci[terms];
     }
 
-    public int fiboOpss(int arr[], int index) {
-        if (index == 0) {
-            arr[0] = 0;
-            return 0;
+    public void displaySequence(int[] storeFibonacci, int terms) {
+        for (int i = 0; i <= terms; i++) {
+            System.out.print(storeFibonacci[i]);
+            System.out.print("Number " + (i+1) + "\t");
+            System.out.print(storeFibonacci[i] + "\n");
+            if(i < terms) {
+                System.out.print(", ");
+            }
         }
-        if (index == 1) {
-            arr[0] = 0;
-            arr[1] = 1;
-            return 1;
-        }
-        arr[index] = fiboOpss(arr, index - 1) + fiboOpss(arr, index - 2);
-        return arr[index];
-    }
-
-    public int[] fiboOpss(int n) {
-        if (n <= 0) {
-            return new int[0];
-        }
-
-        int[] result = new int[n];
-        result[0] = 0;
-        if (n > 1) {
-            result[1] = 1;
-        }
-
-        for (int i = 2; i < n; i++) {
-            result[i] = result[i - 1] + result[i - 2];
-        }
-
-        return result;
-    }
-
-    int calculateFibonacci(int[] arr, int index) {
-        if (index == 0) {
-            arr[0] = 0;
-            return 0;
-        } else if (index == 1) {
-            arr[0] = 0;
-            arr[1] = 1;
-            return 1;
-        }
-        int fib1 = calculateFibonacci(arr, index - 1);
-        int fib2 = calculateFibonacci(arr, index - 2);
-        arr[index] = fib1 + fib2;
-        return arr[index];
     }
 }
