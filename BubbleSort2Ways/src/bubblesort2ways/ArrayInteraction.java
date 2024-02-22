@@ -46,7 +46,7 @@ public class ArrayInteraction {
         }
         System.out.println("]");
     }
-
+    //sortyAscendingTest
     public void sortArrayDescending(int[] arr) {
         if (arr.length == 0) {
             System.out.println("Array Empty!");

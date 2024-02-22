@@ -57,4 +57,7 @@ public class Validation {
         Validation input = new Validation();
         System.out.println(input.checkPositiveNumber("Enter number of array:", "Must be integer"));
     }
+    public void testCheckEmpty(){
+        
+    }
 }

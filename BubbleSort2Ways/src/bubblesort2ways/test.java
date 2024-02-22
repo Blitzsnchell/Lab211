@@ -11,8 +11,39 @@ package bubblesort2ways;
  */
 public class test {
 
+    private static void BubbleSortTestCase(int[] arr) {
+        ArrayInteraction a = new ArrayInteraction();
+        int arrayLength = arr.length;
+        boolean check = true;
+        displayArrayTestCase(arr, "unsorted");
+        System.out.println("");
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    if (check) {
+                        a.displayArray(arr);
+                        System.err.println("a     " + arr[i] + ">" + arr[j] + ", " + "swap");
+                    }
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+
+                } else {
+                    a.displayArray(arr);
+                    System.out.println("     " + arr[i] + "<" + arr[j] + ", " + "ok");
+                }
+            }
+        }
+    }
+
+    private static void displayArrayTestCase(int[] arr, String msg) {
+        ArrayInteraction a = new ArrayInteraction();
+        a.displayArray(arr);
+        System.out.println("     " + msg);
+    }
+
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 51, 1, 2, 4};
-        
+        int arr[] = {5, 3, 9, 1, 7};
+        BubbleSortTestCase(arr);
     }
 }
