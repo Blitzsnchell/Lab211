@@ -16,18 +16,25 @@ public class BinarySearchLab211 {
     public static void main(String[] args) {
         Validation input = new Validation();
         ArrayInteraction a = new ArrayInteraction();
-        BinarySearch search = new BinarySearch();
-
+        
+        //step 1 enter a positive decimal as size of array
         int numberOfArray = input.checkInt("Enter number of array:", "Must be integer!");
-        // generate random number in array
+        //step 2 generate random number in array
         int[] arr = a.getArrRamdom(numberOfArray);
         // in ra chua sort
         // sort array (Bubble sortt)
-        //  find number
+        //step 3  Enter value to search
         int n = input.checkInt("Enter search value:", "Must be integer!");
-        // sort r?i in
+        // Step 4 using bubble sort to sort array
         arr = a.sortArray(arr);
+        //Step 5 display sorted array
         a.displayArray(arr);
+        // step 6: display result
+        displayResult(arr, n);
+        
+    }
+    public static void displayResult(int arr[], int n){
+        BinarySearch search = new BinarySearch();
         int rls = search.binarySearch(arr, n);
         if (rls == -1) {
             System.err.println("Not Found!");

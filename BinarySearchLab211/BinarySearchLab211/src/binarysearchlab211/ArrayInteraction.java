@@ -34,6 +34,8 @@ public class ArrayInteraction {
         return arr;
     }
     
+    
+    
     public void displayArray(int[] arr){
         System.out.print("Sorted array: [");
         for (int i = 0; i < arr.length; i++) {

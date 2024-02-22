@@ -21,22 +21,24 @@ public class BinarySearch {
         ArrayInteraction i = new ArrayInteraction();
         while (left <= right) {
             int mid = left + (right - left) / 2;
-//            for (int j = left; j < right; j++) {
-//                System.out.print(arr[j]+" ");
-//            }
-//            System.out.println("10");
-//            count ++;
-            
+            System.out.println("Step: " + (count + 1));
+            for (int j = left; j <= right; j++) {
+                System.out.print(arr[j] + " ");
+            }
+            System.out.print("\nCompare: " +  arr[mid]+ "(index: "+mid+")" + "-" +value+"(value)");
             if (arr[mid] == value) {
-//                System.out.println("Step:"+count);
+                count++;
                 return mid;
-            } 
+            }
             if (arr[mid] > value) {
+                count++;
                 right = mid - 1;
-            } 
+            }
             if (arr[mid] < value) {
+                count++;
                 left = mid + 1;
             }
+            System.out.println("");
         }
         return -1;
     }
